@@ -1,0 +1,11 @@
+__pycache__
+alpha-pose-results-test.json
+alpha-pose-results-val.json
+test-predict/*
+val-predict/*
+*.npy
+*.json
+*.so
+*.pyc
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
