@@ -2,8 +2,6 @@
 
 Official implementation of [Pose Flow: Efficient Online Pose Tracking ](https://arxiv.org/abs/1802.00977).
 
-## Pose Tracking Results
-
 <p align='center'>
     <img src="posetrack.gif", width="360">
 </p>
