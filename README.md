@@ -36,20 +36,21 @@ Results on PoseTrack Challenge validation set:
 ## Installation
 
 1. Download PoseTrack Dataset from [PoseTrack](https://posetrack.net/) to `AlphaPose/PoseFlow/posetrack_data/`
-2. (Option) Use [DeepMatching](http://lear.inrialpes.fr/src/deepmatching/) to extract dense correspondences between adjcent frames in every video, Please refer to [DeepMatching Compile Error](http://xiuyuliang.cn/2014/12/05/deepmatching/) to compile DeepMatching correctly
+2. (Optional) Use [DeepMatching](http://lear.inrialpes.fr/src/deepmatching/) to extract dense correspondences between adjcent frames in every video, Please refer to [DeepMatching Compile Error](http://xiuyuliang.cn/2014/12/05/deepmatching/) to compile DeepMatching correctly
 
 ```shell
 pip install -r requirements.txt
 
-(option---)
+---DeepMatching Version---
 cd deepmatching
 make clean all
 make
 cd ..
 python matching.py # default using DeepMatching (More Robust but Slower)
-(---option)
 
+---Orb Version---
 python matching.py --orb=True # using ORB Matching (Faster but Less Robust)
+
 ```
 ## Quick Start
 
