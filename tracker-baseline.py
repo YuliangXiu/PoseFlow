@@ -1,7 +1,7 @@
 # coding: utf-8
 
 '''
-File: tracker.py
+File: tracker-baseline.py
 Project: AlphaPose
 File Created: Thursday, 1st March 2018 6:12:23 pm
 Author: Yuliang Xiu (yuliangxiu@sjtu.edu.cn)
