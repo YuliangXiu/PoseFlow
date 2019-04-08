@@ -24,6 +24,14 @@ from tqdm import tqdm
 from utils import *
 from matching import orb_matching
 import argparse
+import re
+
+def sorted_alphanumerically(l):
+    """ Sort the given iterable in the way that humans expect."""
+    convert = lambda text: int(text) if text.isdigit() else text
+    alphanum_key = lambda key: [ convert(c) for c in re.split('([0-9]+)', key) ]
+    return sorted(l, key = alphanum_key)
+
 
 # visualization
 def display_pose(imgdir, visdir, tracked, cmap):
@@ -140,7 +148,7 @@ if __name__ == '__main__':
     print("Start loading json file...\n")
     with open(notrack_json,'r') as f:
         notrack = json.load(f)
-        for img_name in tqdm(sorted(notrack.keys())):
+        for img_name in tqdm(sorted_alphanumerically(notrack.keys())):
             track[img_name] = {'num_boxes':len(notrack[img_name])}
             for bid in range(len(notrack[img_name])):
                 track[img_name][bid+1] = {}
@@ -154,8 +162,7 @@ if __name__ == '__main__':
 
     # tracking process
     max_pid_id = 0
-    frame_list = sorted(list(track.keys()))
-
+    frame_list = sorted_alphanumerically(list(track.keys()))
     print("Start pose tracking...\n")
     for idx, frame_name in enumerate(tqdm(frame_list[:-1])):
         frame_new_pids = []
